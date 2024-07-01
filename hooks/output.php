@@ -18,7 +18,7 @@ $result = mysqli_query($conn, "SELECT * FROM users");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/output.css">
-    <title>Document</title>
+    <title>Data Show</title>
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,12 +36,16 @@ $result = mysqli_query($conn, "SELECT * FROM users");
             <th>NO.</th>
             <th>Username</th>
             <th>Email</th>
+            <th>Alamat</th>
+            <th>NO Telp</th>
         </tr>
     <?php while ($row = mysqli_fetch_assoc($result)) : ?>
         <tr>
             <td><?= $row["id"]  ?></td>
             <td><?= $row["username"]  ?></td>
             <td><?= $row["email"]  ?></td>
+            <td><?= $row["alamat"]  ?></td>
+            <td><?= $row["telp"]  ?></td>
         </tr>
     <?php endwhile; ?>
     </table>

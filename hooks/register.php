@@ -3,9 +3,12 @@ session_start();
 
 // Mengambil data dari form
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // print_r($_POST); die;
     $username = $_POST['username'];
     $password = $_POST['password'];
     $email = $_POST['email'];
+    $alamat = $_POST['alamat'];
+    $telp = $_POST['telp'];
 
     // Melakukan validasi data (contoh: minimal panjang username dan password)
     if (strlen($username) < 2 || strlen($password) < 4) {
@@ -29,7 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         id INT(11) AUTO_INCREMENT PRIMARY KEY,
         username VARCHAR(50) NOT NULL,
         password VARCHAR(255) NOT NULL,
-        email VARCHAR(50) NOT NULL
+        email VARCHAR(50) NOT NULL,
+        alamat VARCHAR(250) NOT NULL,
+        telp VARCHAR(50) NOT NULL
     )";
 
     if ($conn->query($sql) === false) {
@@ -39,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Menyimpan data ke database
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$hashedPassword', '$email')";
+    $sql = "INSERT INTO users (username, password, email, alamat, telp) VALUES ('$username', '$hashedPassword', '$email', '$alamat', '$telp')";
 
     if ($conn->query($sql) === true) {
         // Registrasi berhasil, atur session
@@ -66,3 +71,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </body>
 </html>
+    

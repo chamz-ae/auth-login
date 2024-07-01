@@ -28,6 +28,12 @@ if (isset($_POST["register"])) {
         
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
+
+        <label for="address">Alamat:</label>
+        <input type="address" id="Alamat" name="alamat" required><br><br>
+
+        <label for="telp">No Telp:</label>
+        <input type="No" id="No Telp" name="telp" required><br><br>
         
         <input type="submit" name="register" value="Register">
     </form>

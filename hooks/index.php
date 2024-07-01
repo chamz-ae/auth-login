@@ -96,13 +96,6 @@ if (isset($_POST["submit"])) {
           </button>
         </li>
       </form>
-      <form action="forgot_password.php" method="POST">
-        <li class="mt-7 bg-gray-200 w-32 p-2 hover:scale-95 duration-200 rounded-full mx-auto">
-          <button class="font-semibold" type="submit" name="Forgot Password">
-            Forgot Password
-          </button>
-        </li>
-      </form>
     </ul>
   </main>
 </body>
