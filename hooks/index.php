@@ -12,8 +12,8 @@ if (isset($_POST["submit"])) {
     $password = mysqli_real_escape_string($conn, $_POST["password"]);
 
     // query ke database
-    $stmt = mysqli_prepare($conn, "SELECT * FROM users WHERE username = ?");
-    mysqli_stmt_bind_param($stmt, "s", $username);
+    $stmt = mysqli_prepare($conn, "SELECT * FROM users WHERE username = ? OR email = ?");
+    mysqli_stmt_bind_param($stmt, "ss", $username, $email);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
 
@@ -101,3 +101,4 @@ if (isset($_POST["submit"])) {
 </body>
 
 </html>
+      
